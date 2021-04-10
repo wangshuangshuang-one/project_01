@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //构造函数
+        function Star(uname, age, gender) {
+            this.uname = uname;
+            this.age = age;
+            this.gender = gender;
+        };
+        //实例化对象身上有__proto__指向,没有prototype属性
+        //实例化对象身上__proto__指向的是构造函数的constructor
+        const ldh = new Star('刘德华', 60, '男');
+        console.log(ldh);
+        console.log(ldh.__proto__);
+        console.log(Star);
+    </script>
+</body>
+
+</html>

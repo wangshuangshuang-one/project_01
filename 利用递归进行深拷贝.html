@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const obj = {
+            name: '刘德华',
+            age: 60,
+            hobby: ['唱歌', '演戏'],
+            msg: {
+                song: '冰雨',
+                movie: '上海滩'
+            }
+        };
+        let o = {};
+        function deepClone(obj, o) {
+            for (var key in obj) {
+                if (obj[key] instanceof Array) {
+                    o[key] = obj[key];
+                    deepClone(o[key], obj[key]);
+                } else if (obj[key] instanceof Object) {
+                    o[key] = obj[key];
+                    deepClone(o[key], obj[key])
+                } else {
+                    o[key] = obj[key];
+                }
+            }
+        };
+        deepClone(obj, o);
+        console.log(o);
+        const str = [1, 2, 3];
+        const str2 = '';
+        const str3 = 0;
+        const str4 = undefined;
+        const str5 = null;
+        const str6 = true;
+
+        const arr = [];
+        const date = new Date();
+        function fn(params) {
+            
+        };
+        
+        //判断数据类型
+        // 1. typeof
+        // 2.instanceof
+        // 3.通过Object下的toString.call()方法来判断
+        console.log(toString.call(obj));
+        console.log(toString.call(str));
+        console.log(toString.call(str2));
+        console.log(toString.call(str3));
+        console.log(toString.call(str4));
+        console.log(toString.call(str5));
+        console.log(toString.call(str6));
+        // 4.根据对象的contructor判断
+        // console.log('数据类型判断' - constructor);
+        console.log(arr.constructor === Array); //true
+        console.log(date.constructor === Date); //true
+        console.log(fn.constructor === Function); //true
+        // 5.jq中判断数据类型的方法
+
+
+    </script>
+</body>
+
+</html>
